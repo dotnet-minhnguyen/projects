@@ -1,0 +1,59 @@
+@import '_share.scss';
+footer {
+    padding-bottom: 2rem;
+    margin-top: 6rem;
+    background-color: $backgroud-color;
+    color: white;
+    width: 100%;
+
+    svg {
+        margin-left: 4px;
+    }
+
+    section {
+        padding-top: 2.5rem;
+        border-top: 1px solid rgb(36, 36, 36);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 3rem;
+        max-width: 80%;
+        margin: auto auto 4.5rem;
+
+        ul {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+
+            li {
+
+                &.header {
+                    margin-bottom: 1rem;
+                }
+                .header {
+                    box-sizing: border-box;
+                    font-size: 23px;
+                    text-align: left;
+                    display: inline;
+                }
+
+                .span {
+                    box-sizing: border-box;
+                    font-size: inherit;
+                    text-align: left;
+                    display: inline;
+                }
+
+                a {
+                    box-sizing: border-box;
+                    font-size: inherit;
+                    text-align: left;
+                    display: inline;
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: inherit;
+                    transition: color 100ms ease 0s;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<fab-dialog [hidden]="dialogHidden" [dialogContentProps]="loginProps">
+    <fab-dialog-content>
+        <fab-text-field
+                [type]="'email'"
+                [label]="'Email'"
+                [placeholder]="'Email...'"
+                [value]="username"
+                (onChange)="setUsername($event, newValue)">
+        </fab-text-field>
+        <fab-text-field
+                [label]="'Password'"
+                [type]="'password'"
+                [placeholder]="'Password...'"
+                [value]="password"
+                (onChange)="setPassword($event, newValue)">
+        </fab-text-field>
+        <fab-text-field
+                [label]="'Vault Key'"
+                [placeholder]="'Vault Key...'"
+                [type]="'password'"
+                [value]="vaultKey"
+                (onChange)="setVaultKey($event, newValue)">
+        </fab-text-field>
+        <div style="width: 100%; margin-top:10px;">
+            <fab-message-bar [messageBarType]="messageBarErrorProps">result: {{loginResult | json}}</fab-message-bar>
+        </div>
+    </fab-dialog-content>
+    <fab-dialog-footer>
+        <div style="width: 100%; display: flex; align-items: center; justify-content: space-between">
+            <fab-default-button (onClick)="closeLoginDialog()">
+                Cancel
+            </fab-default-button>
+            <fab-primary-button (onClick)="login()">
+                Login
+            </fab-primary-button>
+        </div>
+    </fab-dialog-footer>
+</fab-dialog>

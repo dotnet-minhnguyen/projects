@@ -1,0 +1,71 @@
+{
+  "secretaries": {
+    "secretary1": {
+      "firstName": "Ivan",
+      "lastName": "Dr. Adamovich",
+      "fullName": "Dr. Ivan Adamovich"
+    },
+    "secretary2": {
+      "firstName": "Henri",
+      "lastName": "Schneeberger",
+      "fullName": "Henri Schneeberger"
+    },
+    "secretary3": {
+      "firstName": "Barbara",
+      "lastName": "Schüpbach",
+      "fullName": "Barbara Schüpbach"
+    }
+  },
+  "rmTranslations": [
+    {
+      "initials": "ADI",
+      "firstName": "Ivan",
+      "lastName": "Adamovich"
+    },
+    {
+      "initials": "BAC",
+      "firstName": "Christoph",
+      "lastName": "Baumann"
+    },
+    {
+      "initials": "DIC",
+      "firstName": "Christina",
+      "lastName": "Dietrich"
+    },
+    {
+      "initials": "DOB",
+      "firstName": "Brigitte",
+      "lastName": "Domeni"
+    },
+    {
+      "initials": "GAS",
+      "firstName": "Sidonia",
+      "lastName": "Gabr"
+    },
+    {
+      "initials": "PAO",
+      "firstName": "Orun",
+      "lastName": "Palit"
+    },
+    {
+      "initials": "SCH",
+      "firstName": "Henri",
+      "lastName": "Schneeberger"
+    },
+    {
+      "initials": "SCU",
+      "firstName": "Ursina",
+      "lastName": "Schneider"
+    },
+    {
+      "initials": "SIA",
+      "firstName": "Andreas",
+      "lastName": "Siegrist"
+    },
+    {
+      "initials": "STU",
+      "firstName": "Uwe",
+      "lastName": "Staschinski"
+    }
+  ]
+}

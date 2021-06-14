@@ -1,0 +1,139 @@
+<main class="ms-welcome__main">
+    <div style="display: flex; flex-direction: row; align-items: center">
+        <fab-primary-button (click)="openLoginDialog()">Login to Assetmax...</fab-primary-button>
+        <div style="display: flex; flex-direction: row; align-items: center; color: seagreen" *ngIf="connected">
+            <div style="margin-top: 4px; padding-right: 2px; padding-left: 15px;">
+                <span class="ms-Icon ms-Icon--CheckMark"></span>
+            </div>
+            <div>
+                Logged In
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row; align-items: center; color: #a52a40" *ngIf="false">
+            <div style="margin-top: 4px; padding-right: 2px; padding-left: 15px;">
+                <span class="ms-Icon ms-Icon--Clear"></span>
+            </div>
+            <div>
+                Not Logged In
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 15px; margin-bottom: 10px;width: 100%">
+    </div>
+    <div [className]="!connected && 'form-disabled'">
+        <div style="display: flex; align-items: center">
+            <div style="width: 110px;">
+                <label class="ms-Label ms-Dropdown-label label-75">Detected Contract Type:</label>
+            </div>
+            <div style="width: 200px; white-space: normal; font-size: 15px;">
+                {{connected ? 'Mandatsvereinbarung' : ''}}
+            </div>
+        </div>
+        <div style="margin-top: 10px; display: flex;">
+            <div style="max-width: 100px; width: 100px; margin-right: 10px; align-items: center">
+                <label class="ms-Label ms-Dropdown-label label-75">Client:</label>
+            </div>
+            <div style="width: 180px; margin-left: -5px">
+                <ng-select
+                        bindLabel="name"
+                        [(ngModel)]="selectedClient"
+                        [items]="clientOptions"
+                        (add)="onClientSelect($event)"
+                        (remove)="onClientDeselect($event)"
+                        [placeholder]="'Select Client...'"
+                        (onChange)="onClientChange($event)"
+                ></ng-select>
+            </div>
+        </div>
+        <div style="margin-top: 10px; display: flex; align-items: center">
+            <div style="max-width: 100px; width: 100px; margin-right: 10px;">
+                <label class="ms-Label ms-Dropdown-label label-75">Mandates:</label>
+            </div>
+            <div style="width: 180px; margin-left: -5px">
+                <ng-select
+                        bindLabel="name"
+                        [(ngModel)]="selectedMandates"
+                        [multiple]="true"
+                        [closeOnSelect]="false"
+                        (add)="onMandateSelect($event)"
+                        (remove)="onMandateSelect($event)"
+                        [items]="mandateOptions"
+                        [placeholder]="'Select Mandates...'"
+                ></ng-select>
+            </div>
+        </div>
+        <div style="margin-top: 10px; display: flex; align-items: center">
+            <div style="max-width: 100px; width: 100px; margin-right: 10px;">
+                <label class="ms-Label ms-Dropdown-label label-75">Language:</label>
+            </div>
+            <div style="width: 180px; margin-left: -5px">
+                <ng-select
+                        bindLabel="name"
+                        [(ngModel)]="selectedLanguage"
+                        [items]="languageOptions"
+                        [placeholder]="'Select Language...'"
+                        (add)="onLanguageSelect($event)"
+                        (remove)="onLanguageSelect($event)"
+                ></ng-select>
+            </div>
+        </div>
+        <div style="margin-top: 10px; display: flex; align-items: center">
+            <div style="max-width: 100px; width: 100px; margin-right: 10px;">
+                <label class="ms-Label ms-Dropdown-label label-75">PCB Signatures for RM:</label>
+            </div>
+            <div style="width: 180px; margin-left: -5px">
+                <ng-select
+                        bindLabel="name"
+                        [(ngModel)]="selectedConsultant"
+                        [items]="consultantOptions"
+                        [placeholder]="'Select RM...'"
+                        (add)="onConsultantSelect($event)"
+                        (remove)="onConsultantSelect($event)"
+                ></ng-select>
+            </div>
+        </div>
+        <div style="margin-top: 10px; display: flex; align-items: center">
+            <div style="max-width: 100px; width: 100px; margin-right: 10px;">
+                <label class="ms-Label ms-Dropdown-label label-75">PCB Signatures for GL:</label>
+            </div>
+            <div style="width: 180px; margin-left: -5px">
+                <ng-select
+                        bindLabel="name"
+                        [(ngModel)]="selectedSecretary"
+                        [items]="secretaryOptions"
+                        [placeholder]="'Select GL...'"
+                        (add)="onSecretarySelect($event)"
+                        (remove)="onSecretarySelect($event)"
+                ></ng-select>
+            </div>
+        </div>
+        <div style="margin-top: 10px; display: flex;">
+            <div style="max-width: 100px; width: 100px; margin-right: 10px;">
+                <label class="ms-Label ms-Dropdown-label label-75">Contract Sections:</label>
+            </div>
+            <div style="max-width: 180px; margin-left: -5px">
+                <fab-checkbox [checked]="" (onChange)="toggleSectionVisibility(1, $event)"
+                              label="Risikoprofil und Anlagestrategie"></fab-checkbox>
+                <fab-checkbox [checked]="" (onChange)="toggleSectionVisibility(2, $event)"
+                              label="Risikoaufklarung"></fab-checkbox>
+                <fab-checkbox [checked]="" (onChange)="toggleSectionVisibility(3, $event)"
+                              label="Depotdetails"></fab-checkbox>
+                <fab-checkbox [checked]="generalTermsVisible" (onChange)="toggleGeneralTerms($event)" label="AGB"></fab-checkbox>
+                <fab-checkbox [checked]="dataProtectionVisible" (onChange)="toggleDataProtection($event)"
+                              label="Datenschutz"></fab-checkbox>
+            </div>
+        </div>
+    </div>
+    <login-dialog
+            (onLoginSuccess)="onLoginSuccess()"
+            (onLoginCancel)="onLoginCancel()"
+            [username]="username"
+            [password]="password"
+            [vaultKey]="vaultKey"
+            [dialogHidden]="hiddenLoginDialog">
+    </login-dialog>
+    <div style="padding-top: 15px;">
+        <fab-default-button (click)="generateDocument()">Generate document...</fab-default-button>
+        <fab-default-button (click)="resetDocument()">Reset...</fab-default-button>
+    </div>
+</main>

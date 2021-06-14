@@ -1,0 +1,61 @@
+
+@import '_share.scss';
+
+header {
+    height: 48px;
+    background-color: $backgroud-color;
+    color: white;
+    fill: white;
+    
+    nav {
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        height: 100%;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        font-size: 0.8125rem;
+        margin: auto auto;
+
+        .nav-container {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            width: 100%;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+
+            ul {
+                list-style: none;
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                -webkit-box-align: center;
+                align-items: center;
+
+                li {
+                    margin-right: 3rem;
+
+                    button {
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        text-decoration: none;
+                        transition: all 200ms ease 0s;
+                        outline: none;
+                        padding: 0px;
+                        color: inherit;
+                        font-size: inherit;
+
+                        svg {
+                            margin-left: 4px;
+                            fill: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

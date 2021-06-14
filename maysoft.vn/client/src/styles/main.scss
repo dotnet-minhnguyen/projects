@@ -1,0 +1,35 @@
+@import '_share.scss';
+@import '_header.scss';
+@import '_footer.scss';
+
+
+.logo-color {
+    color: $logo-color;
+}
+
+.link-color {
+    color: $link-color;
+}
+
+.background-color {
+    background-color: $backgroud-color;
+}
+
+.app-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+// ss
+.input-file {
+    visibility: hidden;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.fake-link {
+    color: $link-color;
+    cursor: pointer;
+}

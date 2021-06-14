@@ -1,0 +1,20 @@
+<div style="padding: 15px;">
+    <fab-text-field
+            [label]="'API url'"
+            [type]="'email'"
+            [placeholder]="'API URL (eg. https://demo1.assetmax.ch)...'"
+            [value]="settings.apiUrl"
+            (onChange)="setApiUrl($event, newValue)">
+    </fab-text-field>
+
+    <div>
+        <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; padding-top: 15px;">
+            <fab-default-button (onClick)="resetSettings()">
+                Reset
+            </fab-default-button>
+            <fab-primary-button (onClick)="saveSettings()">
+                Save
+            </fab-primary-button>
+        </div>
+    </div>
+</div>

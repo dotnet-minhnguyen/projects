@@ -1,0 +1,23 @@
+{
+  "name": "smsmaysoft",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "tsc",
+    "start": "twilio-run start",
+    "predeploy": "tsc",
+    "deploy": "twilio-run deploy"
+  },
+  "dependencies": {
+    "@twilio-labs/serverless-runtime-types": "^1.1.8"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "twilio-run": "^2.6.0",
+    "typescript": "^3.9.6"
+  },
+  "engines": {
+    "node": "10"
+  }
+}
