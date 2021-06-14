@@ -1,0 +1,7 @@
+ssh-keygen -t rsa -b 4096 -C “phuminh88@gmail.com” -f ./phuminh88
+Saigon@020
+
+ssh-keygen -t rsa -b 4096 -C binhtran@bbv.ch  -f ./bingtr
+
+Eval $(ssh-agent -s)
+Ssh-add bingtr
